@@ -10,23 +10,16 @@ class MainScene extends Scene {
 		// Add any asset you want to load here
 
 		assets.add(Images.KENNEY_PIXELSHMUP__SHIPS__SHIP_0000);
+		assets.add(Images.KENNEY_PIXELSHMUP__TILES__TILE_0000);
 	}
 
 	override function create() {
 		// Called when scene has finished preloading
 
 		// Display player
-		player = new Player(assets.texture(Images.KENNEY_PIXELSHMUP__SHIPS__SHIP_0000), new Point(width / 2, height / 2), 300);
+		player = new Player(assets.texture(Images.KENNEY_PIXELSHMUP__SHIPS__SHIP_0000), new Point(width / 2, height / 2), 300,
+			assets.texture(Images.KENNEY_PIXELSHMUP__TILES__TILE_0000));
 		add(player);
-
-		// Create some logo scale "in" animation
-		/*logo.tween(ELASTIC_EASE_IN_OUT, 0.75, 0.0001, 1.0, function(value, time) {
-			logo.alpha = value;
-			logo.scale(value);
-		});*/
-
-		// Print some log
-		log.success('Hello from ceramic :)');
 	}
 
 	override function update(delta:Float) {
