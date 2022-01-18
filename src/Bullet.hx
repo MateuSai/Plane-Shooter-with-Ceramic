@@ -26,8 +26,9 @@ class Bullet extends Quad {
 	function update(delta:Float) {
 		x += direction.x * speed * delta;
 		y += direction.y * speed * delta;
-		// log.debug(x + " " + y);
+		// log.debug(x + " " + y); // Print bullet position to the terminal
 
+		// Destroy the bullet when she exits the screen
 		if (x + width * anchorX < 0 || x - width * anchorX > screen.width || y + height * anchorY < 0 || y - height * anchorY > screen.height) {
 			destroy();
 		}
